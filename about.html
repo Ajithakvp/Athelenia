@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>about us</title>
+    <link rel="icon" type="image/png" href="images/logo_img.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+
+    <style>
+        .athlete-feature-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+
+        .about-image {
+            flex: 1 1 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1 1 50%;
+        }
+
+        .about-icon-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .icon-circle {
+            width: 30px;
+            height: 30px;
+            background-image: radial-gradient(circle, #000 2px, transparent 2.5px);
+            background-size: 100% 100%;
+            border-radius: 50%;
+            mask: repeating-conic-gradient(#000 0deg 10deg, transparent 10deg 20deg);
+            -webkit-mask: repeating-conic-gradient(#000 0deg 10deg, transparent 10deg 20deg);
+        }
+
+        .about-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .about-content p {
+            font-size: 20px;
+            color: #ccc;
+            margin: 20px 0;
+            max-width: 600px;
+            animation: fadeDown 1.2s ease-out forwards;
+            animation-delay: 0.4s;
+            font-family: Segoe UI, Arial, sans-serif;
+
+            opacity: 0;
+        }
+
+        .about-content p::first-letter {
+            /* Changed this line */
+            font-size: 1.8em;
+            margin-right: 0.05em;
+        }
+
+
+
+
+
+        @media (max-width: 768px) {
+            .athlete-feature-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image,
+            .about-content {
+                flex: 1 1 100%;
+            }
+
+            .about-image img {
+                max-width: 100%;
+            }
+        }
+    </style>
+
+
+</head>
+
+<header>
+    <div class="navbar">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <img src="images/logo_img.png" alt="Club Logo" />
+                <span>Athelenia</span>
+            </div>
+        </a>
+    </div>
+</header>
+
+<body>
+
+
+
+
+
+    <section class="athlete-feature-section">
+        <div class="about-image">
+            <img src="images/about_1.png" alt="Designer at work">
+        </div>
+        <div class="about-content">
+            <div class="center-text-box">
+
+                <div class="text-line">
+                    <span class="filled-text">About</span>
+                    <span class="stroke-text">Us</span>
+
+                </div>
+            </div>
+            <p>
+                Transforming the journey of athletes from local to legendary
+
+            </p>
+            <p>
+                Becoming an athlete is not just about talent — it’s about the ability to recognize mistakes, work
+                relentlessly, and grow smarter every single day. Our platform is built for those who dare to dream big,
+                train hard, and demand clarity in their progress.
+            </p>
+            <p>
+                We are a team of athletes, coaches, and tech innovators who’ve faced the gaps in grassroots sports
+                development — and decided to fix it. That’s why we created a smart ecosystem where data, coaching, and
+                daily effort come together to drive real progress.
+            </p>
+            <p>
+                Our mission is to turn everyday training into personalized insights — from identifying mistakes in match
+                videos to delivering AI-suggested drills, personalized nutrition plans, and smarter recovery. Athletes
+                don’t just train with us — they evolve.
+            </p>
+            <p>
+                For coaches and academy owners, we simplify everything behind the scenes — attendance, payments,
+                performance reports, and player progress — all in one intuitive dashboard. It’s not just a tool; it’s a
+                complete transformation of how academies run and how athletes grow.
+            </p>
+            <p style="color: orange;">
+                <strong> We’re not just building features.
+                    We’re building futures.</strong>
+            </p>
+
+        </div>
+       
+        <div class="about-image">
+        </div>
+        <div class="about-content">
+            <div style="text-align: right;  margin-bottom: 40px; float: right;">
+                <div class="text-line">
+                    <span class="filled-text" style="font-size: 26px;"> -&nbsp;sivanesan&nbsp;bose</span>
+                </div>
+                <div class="text-line">
+                    <span class="filled-text" style="font-size: 26px; color: white;">( ATHELENIA)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

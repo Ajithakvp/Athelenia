@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Owners</title>
+    <link rel="icon" type="image/png" href="images/logo_img.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <style>
+        .highlight {
+            color: orange;
+        }
+
+        .card-container_fc_owners {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .card-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        .card-wrapper.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .card_fc_owners {
+            width: 360px;
+            height: 360px;
+            background-color: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .card_fc_owners:hover {
+            transform: scale(1.03);
+        }
+
+        .image_fc_owners {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        .image_fc_owners img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            padding: 20px;
+        }
+
+        .card-content-outside {
+            max-width: 700px;
+        }
+
+        .card-content-outside h1 {
+            font-size: 38px;
+            font-weight: 900;
+            font-family: Georgia, Times, serif;
+            background: linear-gradient(to bottom, #FF5F1F, #FF5F1F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 1px 1px 3px #FF5F1F;
+            margin-bottom: 15px;
+        }
+
+
+        .card-content-outside h1:first-of-type:first-letter {
+            font-size: 1.8em;
+            font-family: Georgia, Times, serif;
+            margin-right: 0.05em;
+        }
+
+        .card-content-outside p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-content-outside p:first-of-type:first-letter {
+            font-size: 1.8em;
+            margin-right: 0.05em;
+        }
+
+        .athletes_card_text_sub_fc_owners {
+            background: linear-gradient(0deg, #141a1c 30%, #eb9a31 100%);
+            border: 2px solid orangered;
+            border-radius: 16px;
+            padding: 16px 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 0 15px rgba(240, 96, 7, 0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        .athletes_card_text_sub_fc_owners::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #FF5F1F, #000);
+            border-radius: 4px 0 0 4px;
+        }
+
+        @media (max-width: 768px) {
+
+            .card-wrapper,
+            .card-wrapper.reverse {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card_fc_owners {
+                width: 90vw;
+                height: 300px;
+            }
+
+            .card-content-outside {
+                max-width: 90vw;
+                text-align: center;
+            }
+
+            .athlete-feature-section_1 h1 {
+                font-size: 2rem;
+            }
+        }
+
+
+        /* scroll animation */
+
+        .reveal-box {
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reveal-box p {
+            font-size: 20px;
+            color: white;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: all 1.2s ease-out;
+            text-shadow: 0 0 10px #ff6a00aa;
+        }
+
+        .reveal-box.visible p {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mask {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 106, 0, 0.3), transparent);
+            transition: all 1.2s ease-out;
+        }
+
+        .reveal-box.visible .mask {
+            left: 100%;
+        }
+
+        @media (max-width: 768px) {
+
+            .card-wrapper,
+            .card-wrapper.reverse {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card_fc_owners {
+                width: 90vw;
+                height: 300px;
+            }
+
+            .card-content-outside {
+                max-width: 90vw;
+                text-align: center;
+            }
+
+            .reveal-box p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<header>
+    <div class="navbar">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <img src="images/logo_img.png" alt="Club Logo" />
+                <span>Athelenia</span>
+            </div>
+        </a>
+    </div>
+</header>
+
+<body>
+
+
+    <div class="center-text-box">
+
+        <div class="text-line">
+            <span class="stroke-text">For</span>
+            <span class="filled-text">Owners</span>
+        </div>
+    </div>
+
+    <section class="athlete-feature-section">
+        <h1> Run Your Academy <span class="highlight"> Like a Pro.</span></h1>
+        <p class="athlete-description">From finances to staff to student progress — <span
+                style="color: orange;">everything
+                you need to operate a smooth, scalable sports academy is now under one roof.
+            </span></p>
+
+        <div></div>
+        <br></br>
+        <div class="card-container_fc_owners">
+
+            <!-- Card 1 -->
+            <div class="card-wrapper reverse">
+                <div class="card_fc_owners">
+                    <div class="image_fc_owners">
+                        <img src="images/salary_management.png" alt="Team Management">
+                    </div>
+                </div>
+                <div class="card-content-outside">
+                    <h1>Staff Salary Management</h1>
+                    <div class="reveal-box scrollReveal">
+                        <span class="mask"></span>
+                        <p>Set staff roles, manage salary cycles, and automate payouts with clarity. Get monthly
+                            breakdowns and ensure everyone gets paid on time — no manual tracking needed.</p>
+                    </div>
+                    <div class="highlight">
+                        <p>Professionalize your coaching staff operations</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card-wrapper">
+                <div class="card_fc_owners">
+                    <div class="image_fc_owners">
+                        <img src="images/smart_att.png" alt="Intelligent Scouting">
+                    </div>
+                </div>
+                <div class="card-content-outside">
+                    <h1>Smart Attendance Tracking</h1>
+                    <div class="reveal-box scrollReveal">
+                        <span class="mask"></span>
+                        <p>QR or tap-based check-ins for both coaches and students. Monitor attendance patterns and
+                            analyze commitment and discipline with auto-generated reports.</p>
+                    </div>
+                    <div class="highlight">
+                        <p>Keep your academy disciplined and data-driven.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card-wrapper reverse">
+                <div class="card_fc_owners">
+                    <div class="image_fc_owners">
+                        <img src="images/stud_fee.png" alt="Player Monitoring">
+                    </div>
+                </div>
+                <div class="card-content-outside">
+                    <h1>Student Fee Dashboard</h1>
+                    <div class="reveal-box scrollReveal">
+                        <span class="mask"></span>
+                        <p>View pending fees, send automated reminders, and accept payments — all inside the app. Offer
+                            full transparency to parents while saving time for your admins.</p>
+                    </div>
+                    <div class="highlight">
+                        <p>No more chasing payments. Let the system do it for you.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+    <script src="js/script.js"></script>
+    <script>
+        // Scroll animation logic for all .scrollReveal elements
+        function handleScrollAnimations() {
+            const boxes = document.querySelectorAll('.scrollReveal');
+            const triggerPoint = window.innerHeight * 0.8;
+
+            boxes.forEach(box => {
+                const boxTop = box.getBoundingClientRect().top;
+                if (boxTop < triggerPoint) {
+                    box.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+    </script>
+</body>
+
+</html>

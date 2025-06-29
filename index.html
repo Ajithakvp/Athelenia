@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Athelenia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Bebas+Neue&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="images/logo_img.png" />
+
+    <link href="css/styles.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="images/logo_img.png" alt="Club Logo" />
+                    <span>Athelenia</span>
+                </div>
+            </a>
+            <nav>
+                <!-- <button class="btn-primary">Feedback</button> -->
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 style="font-size: 2.5rem">Track Smarter, Analyse Deeper, Improve Faster</h1>
+            <p>Trusted by sportspersons and coaches nationwide to track progress, training habits, and scout emerging
+                talent.</p>
+            <a href="about.html" target="_blank"><button class="btn-primary" style="float: right;margin-right: 40px;width: 200px;">Register &#8594;</button></a>
+        </div>
+        <div class="hero-visual">
+            <img src="images/front_org1.png" alt="Sports Animation" />
+        </div>
+    </section>
+    <div class="center-text-box">
+
+        <div class="text-line">
+            <span class="stroke-text">Our</span>
+            <span class="filled-text">Services</span>
+        </div>
+    </div>
+
+    <!-- Athletes -->
+    <section class="features">
+        <div class="promo-banner card-animate">
+            <div class="promo-img">
+                <img src="images/for_athelete_pic.jpg" alt="Athlete" />
+            </div>
+            <div class="promo-text">
+                <h1>For <span>Athletes</span></h1>
+                <p>Unlock your full potential with smart insights and personalized support.
+                    From advanced performance tracking to tailored nutrition and exposure tools, our platform helps
+                    athletes grow faster, train smarter, and stay ahead — all while building a standout profile for
+                    coaches and scouts.
+                </p>
+                <a href="for_athlete.html">→ Read more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches -->
+    <section class="services-section">
+        <div class="service-card card-animate">
+            <div class="service-image">
+                <img src="images/for_coaches_pic.jpeg" alt="Coach" />
+            </div>
+            <div class="service-content">
+                <h1>For <span>Coaches</span></h1>
+                <p>Focus on coaching — we’ll handle the rest.
+                    Manage teams, scout talent, and monitor players with an all-in-one coaching assistant powered by
+                    data. Whether you run a local squad or elite academy, our tools let you coach more effectively with
+                    less admin.</p>
+                <a href="for_coaches.html" class="read-more">→ Read more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owners -->
+    <section class="features">
+        <div class="promo-banner card-animate">
+            <div class="promo-img">
+                <img src="images/for_owner_test3.png" alt="Owner" />
+            </div>
+            <div class="promo-text">
+                <h1>For <span>Owners</span></h1>
+                <p>Run your academy like a pro with smart management tools.
+                    Easily handle salaries, track attendance, and streamline student payments — all from one place. We
+                    help you save time, reduce manual work, and focus on growing your academy sustainably</p>
+                <a href="for_owner.html">→ Read more</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="testimonial-section">
+        <div class="sports-text">What Our Partners Have to Say</div>
+
+        <br>
+        <br>
+
+
+        <div class="testimonial-slider">
+            <button class="nav_test prev">&#8249;</button>
+
+            <div class="testimonial-card active">
+                <img src="images/fb_4.jpg" alt="User" class="user-img" />
+                <p class="text">
+                    “Before this app, I had no idea what I was doing wrong. Now I get video breakdowns, personalized
+                    drills, and even recovery tips — all in one place. I feel like I'm finally improving every week.”
+                </p>
+                <p class="author">Rahul M<br /><span style="color:azure">Fast Bowler, Age 16
+                    </span></p>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="images/fb_2.jpg" alt="User" class="user-img" />
+                <p class="text">
+                    “This has cut my manual work by half. I can track each player's mistakes, assign drills, and even
+                    manage attendance and payments — it's made my job 10x easier.”
+                </p>
+                <p class="author">Coach Anitha<br /><span style="color:azure">Head Coach, Sunrise Academy
+                    </span></p>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="images/fb_1.jpg" alt="User" class="user-img" />
+                <p class="text">
+                    “The app brought structure to our academy. From athlete tracking to coach salary management —
+                    everything is transparent now. Parents are happy, players are improving, and operations are smoother
+                    than ever.”
+                </p>
+                <p class="author">Sandeep K<br /><span style="color:azure">Academy Owner, Chennai
+                    </span></p>
+            </div>
+
+            <button class="nav_test next">&#8250;</button>
+        </div>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+
+
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.style.backgroundColor = "#000";
+        document.body.style.color = "#fff";
+
+        // Also make sure the container stays black
+        const footerContainer = document.getElementById("footer-container");
+        if (footerContainer) {
+            footerContainer.style.backgroundColor = "#000";
+            footerContainer.style.color = "#fff";
+        }
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    });
+
+</script>
+
+
+<script>
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    let current = 0;
+
+    function showCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.toggle('active', i === index);
+            dots[i].classList.toggle('active', i === index);
+        });
+    }
+
+    next.addEventListener('click', () => {
+        current = (current + 1) % cards.length;
+        showCard(current);
+    });
+
+    prev.addEventListener('click', () => {
+        current = (current - 1 + cards.length) % cards.length;
+        showCard(current);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            current = i;
+            showCard(current);
+        });
+    });
+
+</script>
+
+
+<script src="js/script.js"></script>
+
+
+
+
+</html>

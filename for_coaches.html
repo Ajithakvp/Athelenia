@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Coaches</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Bebas+Neue&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="images/logo_img.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <style>
+        @property --gradient-angle {
+            syntax: "<angle>";
+            initial-value: 0turn;
+            inherits: false;
+        }
+
+        @keyframes gradient-rotate {
+            to {
+                --gradient-angle: 1turn;
+            }
+        }
+
+        .card-container_for_coaches {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .card-wrapper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 100%;
+        }
+
+        .card-wrapper.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .card_for_coaches {
+            width: 360px;
+            height: 500px;
+            perspective: 1000px;
+
+            animation: gradient-rotate 1s linear infinite;
+            border: 0.5px solid transparent;
+            padding: 3px;
+            border-radius: 20px;
+            background-image:
+                linear-gradient(#000, #000),
+                conic-gradient(from var(--gradient-angle),
+                    orangered 0%,
+                    #de7c25 37%,
+                    #b3590f 50%,
+                    #c7a03c 63%,
+                    orangered 90%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            margin: 30px 0;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 1s ease;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .image_for_coaches,
+        .details_for_coaches {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            top: 0;
+            transition: transform 0.1s linear, box-shadow 0.2s;
+            box-shadow: 0 4px 20px #FF5F1F;
+            left: 0;
+
+        }
+
+        .image_for_coaches {
+            background-color: #000;
+            z-index: 2;
+        }
+
+        .image_for_coaches img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .details_for_coaches {
+            background: linear-gradient(159deg, #011117 31%, #011117 39%, #011117 67%, #011117 89%);
+            transform: rotateY(180deg);
+            z-index: 1;
+            font-size: 18px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .details_for_coaches p:first-of-type:first-letter {
+            font-size: 1.8em;
+            font-family: "Times New Roman";
+            margin-right: 0.05em;
+        }
+
+        /* .details_for_coaches {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 30px 20px;
+            background: linear-gradient(159deg, #011117 31%, #3d3232 39%, #e85907 67%, #ff8f5c 89%);
+            color: #fff;
+            border-radius: 20px;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: rotateY(180deg);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            text-align: start;
+            transition: all 0.5s ease;
+        } */
+
+        /* .card_for_coaches:hover .details_for_coaches {
+            opacity: 1;
+            transform: rotateY(0deg);
+            z-index: 3;
+        } */
+
+        .title_text_fc_for_coaches {
+            font-size: 36px;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #FF5F1F, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 5px #FF5F1F;
+            margin-bottom: 20px;
+        }
+
+        .athletes_card_text_for_coaches p {
+            margin: 0;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+
+        .athletes_card_text_sub_fc_for_coaches {
+            background: linear-gradient(0deg, #141a1c 30%, #eb9a31 100%);
+            border: 2px solid orangered;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 0 15px rgba(240, 96, 7, 0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        .athletes_card_text_sub_fc_for_coaches::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #FF5F1F, #000);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .card-wrapper h2 {
+            width: 600px;
+            opacity: 0;
+            transform: translateY(-50px) scale(0.95);
+            animation: dropIn 1s ease-out forwards;
+            font-size: 70px;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #FF5F1F, #FF5F1F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-family: 'Impact', 'Anton', sans-serif;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .card-wrapper:hover h2 {
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        @media (max-width: 768px) {
+
+            .card-wrapper,
+            .card-wrapper.reverse {
+                flex-direction: column !important;
+            }
+
+            .card_for_coaches {
+                width: 80vw;
+                height: 400px;
+            }
+
+            .card-wrapper h2 {
+                width: 90vw;
+                text-align: center !important;
+            }
+        }
+
+        .athlete-feature-section_1 {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+
+        .stroke-fill-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 80px;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 2px #ff6a00;
+            position: relative;
+            animation: fillIn 3s forwards;
+        }
+
+        .stroke-fill-text::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            overflow: hidden;
+            color: #ff6a00;
+            white-space: nowrap;
+            animation: fillReveal 3s forwards;
+            text-shadow: 0 0 10px #ff6a00, 0 0 20px #ff6a00;
+        }
+
+        @keyframes fillReveal {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stroke-fill-text {
+                font-size: 40px;
+                -webkit-text-stroke: 1px #ff6a00;
+            }
+        }
+    </style>
+</head>
+
+<header>
+    <div class="navbar">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <img src="images/logo_img.png" alt="Club Logo" />
+                <span>Athelenia</span>
+            </div>
+        </a>
+    </div>
+</header>
+
+<body>
+
+    <div class="center-text-box">
+
+        <div class="text-line">
+            <span class="stroke-text">For</span>
+            <span class="filled-text">Coaches</span>
+        </div>
+    </div>
+
+    <div></div>
+    <br></br>
+    <section class="athlete-feature-section_1">
+        <h1>Coach Better.<br><span class="highlight">With Data That Works.</span></h1>
+        <p class="athlete-description">From grassroots to elite, manage your squad, guide every player’s journey, and
+            discover hidden talent — <span style="color: orange;">with a platform built to make coaching more focused
+                and
+                efficient.</span></p>
+
+        <div class="card-container_for_coaches">
+            <div class="card-wrapper">
+                <h2>Team Management Made Simple</h2>
+                <div class="card_for_coaches">
+                    <div class="card-inner">
+                        <div class="image_for_coaches" style="background-color: orangered;">
+                            <img src="images/test_2.png" alt="Team Management">
+                        </div>
+                        <div class="details_for_coaches">
+                            <p>&nbsp;&nbsp;&nbsp;Add your players, assign personalized drills, plan sessions, and
+                                communicate clearly —
+                                all from one
+                                smart dashboard.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Easily add and organize your players by
+                                age, skill level, or position.
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create customized training plans
+                                tailored to each athlete’s needs and progress,centralize communication, files, and
+                                session notes — so everyone stays informed and aligned
+                            </p>
+                            <div class="athletes_card_text_sub_fc_for_coaches">
+                                <p>Cut down on planning time. Boost on-field impact.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper reverse">
+                <h2>Intelligent Talent Scouting</h2>
+                <div class="card_for_coaches">
+                    <div class="card-inner">
+                        <div class="image_for_coaches">
+                            <img src="images/scouting.jpeg" alt="Intelligent Scouting">
+                        </div>
+                        <div class="details_for_coaches">
+                            <p>&nbsp;&nbsp;&nbsp;Our system highlights players with high potential, tracks growth
+                                curves, and flags
+                                performance dips —
+                                so you can nurture talent with intention, not just intuition.
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Identify hidden talent early through
+                                performance metrics, not just game-day impressions.
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create detailed scouting reports with
+                                video highlights, stats, and coach notes — all in one place.
+                            </p>
+                            <div class="athletes_card_text_sub_fc_for_coaches">
+                                <p>Uncover the next star before others do.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <h2>Player Monitoring Dashboard</h2>
+                <div class="card_for_coaches">
+                    <div class="card-inner">
+                        <div class="image_for_coaches">
+                            <img src="images/player_moniter.png" alt="Player Monitoring">
+                        </div>
+                        <div class="details_for_coaches">
+                            <p>&nbsp;&nbsp;&nbsp;Track each athlete’s workload, match intensity, fitness levels, and
+                                attendance to prevent
+                                burnout and
+                                support long-term development.
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monitor physical load across training
+                                sessions and matches to balance intensity and recovery.
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analyze fitness metrics like heart rate,
+                                sprint count, distance covered, and more — synced from wearables or manual logs.
+
+                            </p>
+                            <div class="athletes_card_text_sub_fc_for_coaches">
+                                <p>You coach smarter when you see the full picture.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray(".card-wrapper").forEach((wrapper) => {
+            const card = wrapper.querySelector(".card-inner");
+
+            gsap.fromTo(card,
+                { rotateY: 0 },
+                {
+                    rotateY: 180,
+                    scrollTrigger: {
+                        trigger: wrapper,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    },
+                    duration: 1,
+                    ease: "power2.out"
+                });
+        });
+        gsap.utils.toArray(".card-wrapper").forEach((wrapper) => {
+            gsap.to(wrapper, {
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out"
+            });
+        });
+    </script>
+</body>
+<script src="js/script.js"></script>
+
+</html>

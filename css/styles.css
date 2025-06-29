@@ -1,0 +1,1006 @@
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            background-color: #000 !important;
+            color: #fff !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            background-color: #000;
+            padding: 10px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: "Times New Roman";
+            font-size: 32px;
+            color: #FF5F1F;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+            margin-right: 10px;
+            animation: logoFade 1s ease forwards;
+            opacity: 0;
+        }
+
+        .logo span {
+            animation: slideInText 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+
+        /* Animations */
+        @keyframes logoFade {
+            0% {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInText {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #FF5F1F, red);
+            padding: 10px 20px;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 2rem;
+            margin: 20px auto;
+            font-family: "Times New Roman";
+
+            background: linear-gradient(110deg, rgba(1, 17, 23, 1) 28%, rgba(61, 50, 50, 1) 52%, rgba(230, 88, 23, 1) 69%, rgba(232, 89, 7, 1) 81%);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 153, 0, 0.4);
+            overflow: hidden;
+            max-width: 1200px;
+        }
+
+        .hero-content {
+            flex: 1 1 55%;
+            padding: 20px;
+            color: #fff;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInText 1s ease-out forwards;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: orangered;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-left: 15px;
+            color: #f0f0f0;
+        }
+
+        .hero-visual {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideInImage 1.5s ease-out 0.5s forwards;
+        }
+
+        .hero-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+        }
+
+        @keyframes slideInText {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInImage {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .drop-text {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.95);
+            animation: dropIn 1s ease-out forwards;
+            font-size: 70px;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #FF5F1F, #000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 5px #FF5F1F;
+            font-family: "Times New Roman";
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+
+
+        @keyframes dropIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .features,
+        .services-section {
+            padding: 40px 20px;
+        }
+
+        .sports-text {
+            font-family: "Times New Roman";
+            font-size: 50px;
+            color: orangered;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: relative;
+            animation: moveIn 1.5s ease-out forwards, glowPulse 2s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes moveIn {
+            from {
+                opacity: 0;
+                transform: translateX(-200px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px orangered, 0 0 20px orangered;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #fff, 0 0 30px orangered;
+            }
+        }
+
+        .promo-banner,
+        .service-card {
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.4);
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .promo-banner.animate,
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .promo-banner:nth-child(even),
+        .service-card {
+            flex-direction: row-reverse;
+        }
+
+        .promo-img,
+        .service-image {
+            flex: 1 1 50%;
+        }
+
+        .promo-img img,
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .promo-text,
+        .service-content {
+            flex: 1 1 50%;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: radial-gradient(circle at top left, #000 0%, #1a1a1a 100%);
+            color: #fff;
+        }
+
+        .promo-text h1,
+        .service-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .promo-text h1 span,
+        .service-content h1 span {
+            color: #ff6600;
+        }
+
+        .promo-text p,
+        .service-content p {
+            font-size: 1.2rem;
+            margin: 30px 0 40px;
+            color: #ccc;
+        }
+
+        .promo-text a,
+        .read-more {
+            font-size: 1rem;
+            color: orangered;
+            text-align: right;
+            margin-top: auto;
+        }
+
+        .promo-text a:hover,
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+
+            .promo-banner,
+            .service-card {
+                flex-direction: column;
+            }
+
+            .promo-text,
+            .service-content {
+                padding: 30px;
+                text-align: center;
+            }
+
+            .promo-text a,
+            .read-more {
+                text-align: center;
+            }
+        }
+
+
+        /* for atheletes css readmore */
+
+        .athlete-feature-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+            overflow-x: hidden;
+        }
+
+
+
+        .athlete-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            background-color: #FFA50020;
+            color: #FF5F1F;
+            margin-bottom: 20px;
+            font-weight: 600;
+            animation: fadeDown 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        h1 {
+            font-size: 42px;
+            max-width: 700px;
+            line-height: 1.3;
+            animation: fadeDown 1.2s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .h1,
+        h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 40px;
+            color: white;
+            /* Red color similar to image */
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        h1 .highlight {
+            font-family: 'Anton', sans-serif;
+            font-size: 40px;
+            color: #e53935;
+            /* Red color similar to image */
+            text-transform: uppercase;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .athlete-description {
+            font-size: 16px;
+            color: #ccc;
+            margin: 20px 0;
+            max-width: 600px;
+            animation: fadeDown 1.2s ease-out forwards;
+            animation-delay: 0.4s;
+            font-family: Segoe UI, Arial, sans-serif;
+
+            opacity: 0;
+        }
+
+        .athlete-description::first-letter {
+            /* Changed this line */
+            font-size: 1.8em;
+            margin-right: 0.05em;
+        }
+
+        .athlete-card:nth-child(odd) {
+            animation: slideInLeft 1s ease forwards;
+        }
+
+        .athlete-card:nth-child(even) {
+            animation: slideInRight 1s ease forwards;
+        }
+
+        .athlete-card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .athlete-card:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .athlete-card:nth-child(3) {
+            animation-delay: 0.7s;
+        }
+
+        .athlete-card:hover {
+            border-color: #FFA500;
+            transform: translateY(-5px);
+        }
+
+        .athlete-card-icon {
+            width: 60px;
+            height: 60px;
+            margin: auto;
+            background: #FFA50020;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #FF5F1F;
+            margin-bottom: 20px;
+        }
+
+        .athlete-card-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .athlete-card-desc {
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        @keyframes fadeDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .athlete-card-group {
+                flex-direction: column;
+            }
+
+            .athlete-card {
+                animation: fadeDown 1s ease forwards !important;
+            }
+        }
+
+
+
+        :root {
+            --black: black;
+            --aqua: #b4fee7;
+            --black: #000;
+            --orange: rgb(240, 96, 7);
+            --white: #efefef;
+            --black: #222;
+            --trueBlack: #000;
+        }
+
+
+        .forathletes_content {
+            padding: 40px 0;
+        }
+
+        .athletes_main {
+            max-width: 1200px;
+            margin: 0 auto;
+
+        }
+
+        .athletes_cards {
+            display: grid;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 1rem;
+        }
+
+        .athletes_card_item {
+            display: flex;
+        }
+
+        .athletes_card_image {
+            display: flex;
+            height: 250px;
+            box-shadow: 0 50px 100px 0 var(--black);
+        }
+
+        .athletes_card_image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .athletes_card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--black);
+            border-radius: 5px 25px 5px 50px;
+            transition: transform 0.1s linear, box-shadow 0.2s;
+            box-shadow: 0 4px 20px #FF5F1F;
+            /* white shadow effect */
+        }
+
+        .athletes_card:focus,
+        .athletes_card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 5px -5px rgba(203, 10, 10, 0.2);
+            outline: 2px dashed var(--aqua);
+        }
+
+        .athletes_card_content {
+            padding: 0.5rem 1rem 1rem;
+            color: var(--white);
+        }
+
+        .athletes_card_title {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 90%;
+            color: var(--orange);
+            padding: 0.5rem;
+            border-radius: 5px 0 0 5px;
+            transform: rotate(-3.3deg);
+            transform-origin: left top;
+            font-family: Georgia, Times, serif;
+            font-weight: 600;
+            font-size: 1.325rem;
+            background-color: var(--black);
+            z-index: 1;
+            animation: 0s 0s fly-in 0 reverse both;
+        }
+
+        @media (min-width: 535px) {
+            .athletes_card_title {
+                animation: 0.5s 0.25s fly-out 1 both;
+            }
+        }
+
+        .athletes_card:focus .athletes_card_title,
+        .athletes_card:hover .athletes_card_title {
+            animation: 0.5s ease-in 0s fly-in 1 both;
+        }
+
+        .athletes_card_text_title {
+            line-height: 1.5;
+            font-weight: bold;
+            background: linear-gradient(0deg, rgba(20, 26, 28, 1) 30%, rgb(211, 53, 0) 100%);
+            border: 2px solid wheat;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 0 15px rgba(240, 96, 7, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: zoomInSubCard 0.6s ease-out both;
+        }
+
+        .athletes_card_text_title p:first-of-type:first-letter {
+            font-size: 1.8em;
+            font-family: Georgia, Times, serif;
+            margin-right: 0.05em;
+        }
+
+        .athletes_card_text {
+            font-family: Segoe UI, Arial, sans-serif;
+            line-height: 1.5;
+            padding: 0 1rem;
+        }
+
+        .athletes_card_text p:first-of-type:first-letter {
+            font-size: 1.8em;
+            font-family: Georgia, Times, serif;
+            margin-right: 0.05em;
+        }
+
+        .athletes_card_text_sub p:first-of-type:first-letter {
+            font-size: 1.8em;
+            margin-right: 0.05em;
+        }
+
+
+
+        .athletes_card_text_sub {
+            background: linear-gradient(0deg, rgba(20, 26, 28, 1) 30%, rgba(235, 154, 49, 1) 100%);
+            border: 2px solid wheat;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 0 15px rgba(240, 96, 7, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: zoomInSubCard 0.6s ease-out both;
+        }
+
+        /* Subtle animated accent bar on left */
+        .athletes_card_text_sub::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #FF5F1F, #000);
+            border-radius: 4px 0 0 4px;
+        }
+
+        /* Text */
+        .athletes_card_text_sub p {
+            margin: 0;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+
+        /* Animation */
+        @keyframes zoomInSubCard {
+            0% {
+                opacity: 0;
+                transform: scale(0.92) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+
+        @media (min-width: 480px) {
+            .athletes_card_text {
+                overflow: auto;
+                max-height: 20rem;
+                scrollbar-width: thin;
+                scrollbar-color: var(--aqua) var(--violet);
+            }
+
+            .athletes_card_text::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            .athletes_card_text::-webkit-scrollbar-track {
+                background: var(--violet);
+            }
+
+            .athletes_card_text::-webkit-scrollbar-thumb {
+                background-color: var(--aqua);
+            }
+        }
+
+        .athletes_heading {
+            opacity: 0;
+            transform: translateX(-100px) scale(0.95);
+            animation: dropIn-fc 1s ease-out forwards;
+            font-size: 80px;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #FF5F1F, #000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: left;
+            margin: 0 0 15px 40px;
+            font-family: 'Impact', 'Anton', sans-serif;
+        }
+
+        @keyframes fly-in {
+            0% {
+                top: 0;
+                right: 0;
+                font-size: 1.325rem;
+            }
+
+            25% {
+                top: 0;
+                right: -200%;
+                font-size: 1.325rem;
+            }
+
+            26% {
+                font-size: 2rem;
+            }
+
+            100% {
+                top: 2rem;
+                right: 0;
+                font-size: 2rem;
+            }
+        }
+
+        @keyframes fly-out {
+            0% {
+                top: 2rem;
+                right: 0;
+                font-size: 2rem;
+            }
+
+            50% {
+                top: 0;
+                right: -200%;
+                font-size: 1.325rem;
+            }
+
+            100% {
+                top: 0;
+                right: 0;
+                font-size: 1.325rem;
+            }
+        }
+
+        @keyframes dropIn-fc {
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+
+
+
+
+
+        /* Feedback */
+        .testimonial-section {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .subtitle {
+            color: #f4d03f;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .title_fb {
+            font-size: 36px;
+            color: #d4c2f2;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .avatars {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .avatars img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            object-fit: cover;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(180deg, rgba(1, 17, 23, 1) 22%, rgba(61, 50, 50, 1) 39%, rgba(232, 89, 7, 1) 67%, rgba(255, 143, 92, 1) 89%);
+            color: white;
+            padding: 40px 30px 30px;
+            border-radius: 20px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: all 0.5s ease;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .testimonial-card.active {
+            display: flex;
+        }
+
+        .user-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            object-fit: cover;
+            position: absolute;
+            top: -30px;
+            background: #fff;
+        }
+
+        .text {
+            font-size: 16px;
+            margin-top: 40px;
+            font-weight: 500;
+            color: whitesmoke;
+        }
+
+        .author {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #111;
+        }
+
+        .author span {
+            font-weight: 400;
+            display: block;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .nav_test {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            color: #fff;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: -40px;
+        }
+
+        .next {
+            right: -40px;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #555;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background-color: #f4d03f;
+            transform: scale(1.4);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+        /* title */
+
+        .text-line {
+            font-size: clamp(40px, 6vw, 70px);
+            /* responsive font size */
+            font-family: "Times New Roman";
+
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            flex-wrap: wrap;
+            display: inline-flex;
+            gap: 15px;
+            opacity: 0;
+            transform: translateY(-50px) scale(0.95);
+            animation: dropIn 1s ease-out forwards;
+            margin-bottom: 20px;
+        }
+
+        .stroke-text {
+            color: transparent;
+            -webkit-text-stroke: 1px orangered;
+            background: black;
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            font-family: "Times New Roman";
+
+            -webkit-text-fill-color: transparent;
+            animation: gradientStroke 4s linear infinite;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .filled-text {
+            color: orangered;
+            font-weight: 900;
+            text-shadow: 2px 2px 5px #FF5F1F;
+            font-family: "Times New Roman";
+
+        }
+
+        @keyframes gradientStroke {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes dropIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .center-text-box {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            /* Adjust as needed */
+        }

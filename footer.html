@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+  .footer {
+    background-color: #000;
+    padding: 60px 0 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(243, 113, 26, 0.47), transparent 60%);
+    animation: rotate 20s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-logo {
+    width: 130px;
+    margin-bottom: 20px;
+  }
+
+  .footer h5 {
+    color: #ff6600;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .footer a {
+    color: #ccc;
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer a:hover {
+    color: #ff6600;
+    transform: translateX(5px);
+  }
+
+  .footer .social a {
+    color: #ff6600;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .footer .social a:hover {
+    transform: scale(1.2);
+    color: #fff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .footer h5 {
+      margin-top: 30px;
+    }
+
+    .footer .social {
+      margin-top: 20px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- Black & Orange Footer Start -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="row text-center text-md-left">
+        <div class="col-md-3">
+          <img src="images/logo_img.png" alt="Logo" class="footer-logo" />
+          <p style="color:#aaa;">Smart performance tracking for athletes, coaches, and teams.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Company</h5>
+          <a href="about.html">About Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="news.html">News</a>
+        </div>
+        <div class="col-md-3">
+          <h5>Resources</h5>
+          <a href="careers.html">Help Center</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact Us</a>
+
+        </div>
+        <div class="col-md-3">
+          <h5>Follow Us</h5>
+          <div class="social">
+            <a href="careers.html"><i class="fab fa-facebook-f"></i></a>
+            <a href="careers.html"><i class="fab fa-twitter"></i></a>
+            <a href="careers.html"><i class="fab fa-instagram"></i></a>
+            <a href="#careers.html"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2025 Athelenia. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
