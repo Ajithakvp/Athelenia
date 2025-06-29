@@ -11,36 +11,198 @@
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
 
-</head>
+    <style>
+        .highlight {
+            color: orange;
+        }
 
-<header>
-    <div class="navbar">
-        <a href="index.html" style="text-decoration: none;">
-            <div class="logo">
-                <img src="images/logo_img.png" alt="Club Logo" />
-                <span>Athelenia</span>
-            </div>
-        </a>
-    </div>
-</header>
+        .card-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        .card-content-outside {
+            max-width: 100%;
+        }
+
+        .card-content-outside h1 {
+            font-size: 20px;
+            font-weight: 900;
+            font-family: Georgia, Times, serif;
+            background: linear-gradient(to bottom, #FF5F1F, #FF5F1F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 1px 1px 3px #FF5F1F;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-content-outside h1::first-letter {
+            font-size: 1.8em;
+            font-family: Georgia, Times, serif;
+            margin-right: 0.05em;
+        }
+
+
+        .card-content-outside p:first-of-type:first-letter {
+            font-size: 1.8em;
+            margin-right: 0.05em;
+        }
+
+
+
+        .card-content-outside p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .reveal-box {
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reveal-box p {
+            font-size: 20px;
+            color: white;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: all 1.2s ease-out;
+            text-shadow: 0 0 10px #ff6a00aa;
+        }
+
+        @media (max-width: 768px) {
+            .card-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card-content-outside {
+                max-width: 90vw;
+                text-align: center;
+            }
+
+            .athlete-feature-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
 
 <body>
 
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="images/logo_img.png" alt="Club Logo" />
+                    <span>Athelenia</span>
+                </div>
+            </a>
+        </div>
+    </header>
 
+    <!-- Main Content -->
     <div class="center-text-box">
-
         <div class="text-line">
             <span class="filled-text" style="font-size: 30px;">TERMS AND CONDITIONS</span>
         </div>
     </div>
 
     <section class="athlete-feature-section">
+        <div class="card-wrapper">
+            <div class="card-content-outside">
+                <p style="text-align: center;">
+                    Welcome to Athelenia (“we”, “us”, or “our”). These Terms and Conditions (“Terms”) govern your access
+                    to and use of our mobile application, website, and services (collectively, the “Platform”).
+                    By registering, accessing, or using the Platform, you agree to be bound by these
+                    Terms.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you do
+                    not agree, do not use the Platform.
+                </p>
 
+                <br>
+                <h1>ELIGIBILITY</h1>
+                <p>
+                    To use the Platform, you must be at least 8 years old. If under
+                    18, your use must be supervised by a parent, legal guardian, or authorized coach/academy
+                    representative. Use of the Platform constitutes consent to these Terms.
+                </p>
+
+                <br>
+                <h1>ABOUT OUR PLATFORM</h1>
+                <p>
+                    Athelenia is an academy-centric performance analytics and management platform. Our features include:
+                </p>
+                <p>
+                    ✦ Athlete performance tracking & feedback
+                </p>
+                <p>
+                    ✦ Attendance management
+                </p>
+                <p>
+                    ✦ Coach payments & scheduling
+                </p>
+                <p>
+                    ✦ Personalized home workouts
+                </p>
+                <p>
+                    ✦ Academy-wise performance reports
+                </p>
+                <p>
+                    ✦ Role-based access for athletes, coaches, and academy owners
+
+                </p>
+                <p>
+                    We operate academy-wise, meaning each account is linked to a specific sports academy. Athletes and
+                    coaches are managed under that academy structure
+                </p>
+
+                <h1>USER ROLES</h1>
+                <p>
+                    You may use the Platform in one or more of the following roles:
+                </p>
+                <p>
+                    <span style="color: orange; font-family: Times New Roman; font-size: 20px; ">Athlete : </span> You
+                    will receive performance insights, training
+                    tasks, and track progress.
+
+                </p>
+
+                <p>
+                    <span style="color: orange; font-family: Times New Roman; font-size: 20px; ">Coach : </span> You can
+                    view athlete performance, provide feedback, and manage training plans.
+
+                </p>
+
+                <p>
+                    <span style="color: orange; font-family: Times New Roman; font-size: 20px; ">Owner/Admin:</span> You
+                    can manage academies, track attendance, handle payments, and oversee staff and athlete activities.
+
+
+                </p>
+                <p>
+                    Each role has distinct access rights and responsibilities.
+                </p>
+
+
+                <!-- Add more terms sections as needed -->
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <div id="footer-container"></div>
-    <script src="js/script.js"></script>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>
