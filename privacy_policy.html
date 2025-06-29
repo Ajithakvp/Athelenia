@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Policy</title>
+    <link rel="icon" type="image/png" href="images/logo_img.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+
+    <style>
+        .highlight {
+            color: orange;
+        }
+
+        .card-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        .card-content-outside {
+            max-width: 100%;
+        }
+
+        .card-content-outside h1 {
+            font-size: 20px;
+            font-weight: 900;
+            font-family: Georgia, Times, serif;
+            background: linear-gradient(to bottom, #FF5F1F, #FF5F1F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 1px 1px 3px #FF5F1F;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-content-outside h1::first-letter {
+            font-size: 1.8em;
+            font-family: Georgia, Times, serif;
+            margin-right: 0.05em;
+        }
+
+
+        .card-content-outside p:first-of-type:first-letter {
+            font-size: 1.8em;
+            margin-right: 0.05em;
+        }
+
+
+
+        .card-content-outside p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .reveal-box {
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reveal-box p {
+            font-size: 20px;
+            color: white;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: all 1.2s ease-out;
+            text-shadow: 0 0 10px #ff6a00aa;
+        }
+
+        @media (max-width: 768px) {
+            .card-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card-content-outside {
+                max-width: 90vw;
+                text-align: center;
+            }
+
+            .athlete-feature-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+</head>
+
+<header>
+    <div class="navbar">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <img src="images/logo_img.png" alt="Club Logo" />
+                <span>Athelenia</span>
+            </div>
+        </a>
+    </div>
+</header>
+
+<body>
+
+
+    <div class="center-text-box">
+
+        <div class="text-line">
+
+            <span class="filled-text" style="font-size: 30px;">Privacy Policy</span>
+
+        </div>
+    </div>
+
+    <section class="athlete-feature-section">
+        <div class="card-wrapper">
+            <div class="card-content-outside">
+                <p style="text-align: center;">
+                    Describes how Aadukalam Pvt Ltd (“Company”, “We”, “Us”, or “Our”) collects, uses, shares, and
+                    protects your information when you use our sports performance and academy management platform,
+                    Athelenia, accessible through our mobile application and website.
+                </p>
+                <p style="text-align: center;">
+                    By using Athelenia, you agree to the practices outlined in this Privacy Policy.
+
+                </p>
+
+                <h1>Definitions</h1>
+                <p>
+                    Company refers to Aadukalam Pvt Ltd, the owner and operator of Athelenia.
+
+                </p>
+                <p>
+                    Platform refers to the Athelenia mobile app, website, and related services.
+
+                </p>
+                <p>
+                    Academy means a registered sports training institution using Athelenia to manage athletes, coaches,
+                    and operational data.
+
+                </p>
+                <p>
+                    Device means any device used to access the Platform such as a smartphone, tablet, or computer.
+
+                </p>
+                <p>
+                    Personal Data refers to information that identifies or relates to an identifiable individual.
+
+                </p>
+                <p>
+                    Service refers to Athelenia’s features, including performance tracking, analytics, communication
+                    tools, and academy operations management.
+
+                </p>
+                <p>
+                    Service Provider means any third-party entity engaged by the Company to support delivery or
+                    enhancement of the Platform.
+
+                </p>
+                <p>
+                    Usage Data refers to data collected automatically from your device when using the Platform.
+
+
+                </p>
+                <p>
+                    User means any individual or organization accessing Athelenia, including:
+
+
+                </p>
+
+                <p>
+                    Athletes receiving coaching, performance feedback, and training insights.
+
+
+                </p>
+
+                <p>
+                    Coaches managing athletes, providing feedback, and monitoring progress.
+
+
+                </p>
+
+                <p>
+                    Academy Owners/Admins handling academy-level operations like attendance, payments, and performance
+                    tracking.
+
+
+                </p>
+            </div>
+
+    </section>
+
+    <div id="footer-container"></div>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
