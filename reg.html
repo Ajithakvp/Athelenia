@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers</title>
+    <link rel="icon" type="image/png" href="images/logo_img.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+
+    <style>
+        .app-banner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 30px;
+            background: linear-gradient(124deg, #011117 28%, #3d3232 52%, #e65817 69%, #e85907 81%);
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-content {
+            flex: 1 1 500px;
+            color: white;
+            padding: 20px;
+        }
+
+
+        .store-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .store-buttons img {
+            height: 100px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .store-buttons img:hover {
+            transform: scale(1.05);
+        }
+
+        .app-image {
+            flex: 1 1 400px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .app-banner {
+                flex-direction: column-reverse;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .text-line {
+                justify-content: center;
+                font-size: 1.8em;
+            }
+
+            .store-buttons {
+                justify-content: center;
+            }
+
+            .store-buttons img {
+                height: 50px;
+                max-width: 160px;
+            }
+
+            .app-image img {
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-line {
+                font-size: 1.5em;
+            }
+
+            .store-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .store-buttons img {
+                height: 45px;
+                max-width: 140px;
+            }
+        }
+
+        .app-content p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        .app-content p::first-letter {
+            font-size: 1.8em;
+            font-family: Georgia, Times, serif;
+            margin-right: 0.05em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="images/logo_img.png" alt="Athelenia Logo" />
+                    <span>Athelenia</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <section class="app-banner">
+        <div class="app-content">
+            <div class="text-line">
+                <span class="stroke-text">GET</span>
+                <span class="filled-text">OUR APP</span>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;Download the Athelenia app and get started with your athletic journey today.
+                Available on both
+                Android and iOS platforms.</p>
+            <div class="store-buttons">
+                <a href="careers.html"><img src="images/gplay.png" alt="Download on Google Play" /></a>
+                <a href="careers.html"><img src="images/ios.png" alt="Download on App Store" /></a>
+            </div>
+        </div>
+        <div class="app-image">
+            <img src="images/Splash Screen.jpg" alt="App Preview Splash Screen" />
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
